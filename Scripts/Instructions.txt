@@ -1,0 +1,37 @@
+This requires a sphere prefab with the Ball script attached to it and in the scene an empty GameObject with the GameController script attached.
+
+
+In the Ball class
+
+create a Name property that defaults to "Unnamed".
+
+Create a private Color variable
+
+Create a constructor that logs out the name of the object.
+
+Add a public method that sets the name of the Ball instance and logs out the name
+
+Add a public method that sets the color of the Ball instance
+
+
+In the GameController class
+
+Create a public reference to the prefab we will be spawning
+
+Add 3 references to the 3 instances we will spawn
+
+Add 3 Color variables (red, blue, green) that we will set instance to 
+
+Add 3 positions for each of the instances
+
+In the Start method, instantiate the prefab, set the position, set the name of the instance to correspond to the color it will be and set the color.
+
+Repeat the above for the other 2 object instances.
+
+Compile and Test.
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+using UnityEngine;
+
+public class GameController : MonoBehaviour
+{
+
+    // public reference to the prefab we will be spawning
+    public GameObject prefab;
+    // 3 references to the 3 instances we will spawn
+    private GameObject prefabInstance;
+    private GameObject prefabInstance2;
+    private GameObject prefabInstance3;
+
+    // 3 Color variables (red, blue, green) that we will set instance to 
+    private Color red = new Color(1, 0, 0);
+    private Color blue = new Color(0, 0, 1);
+    private Color green = new Color(0, 1, 0);
+
+    // 3 positions for each of the instances
+    Vector3 pos1 = new Vector3(-2f, 0f, 0f);
+    Vector3 pos2 = new Vector3(0f, 0f, 0f);
+    Vector3 pos3 = new Vector3(2f, 0f, 0f);
+
+    
+    void Start()
+    {
+        // instantiate the prefab
+        prefabInstance = Instantiate(prefab);
+        // set the position of the instance
+        prefabInstance.transform.position = pos1;
+        // get an instance to the Ball component
+        Ball ball = prefabInstance.GetComponent<Ball>();
+        // set the name of the instance to correspond to the color it will be
+        ball.SetName("Red");
+        // set the color of the object by calling it's public method to set color
+        ball.SetColor(red);
+
+
+        // repeat the above for the other 2 object instances
+
+        prefabInstance2 = Instantiate(prefab);
+        prefabInstance2.transform.position = pos2;
+        Ball ball2 = prefabInstance2.GetComponent<Ball>();
+        ball2.SetName("Blue");
+        ball2.SetColor(blue);
+
+        prefabInstance3 = Instantiate(prefab);
+        prefabInstance3.transform.position = pos3;
+        Ball ball3 = prefabInstance3.GetComponent<Ball>();
+        ball3.SetName("Green");
+        ball3.SetColor(green);
+
+    }
+
+
+}
